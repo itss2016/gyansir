@@ -43,7 +43,7 @@ class SaleOrderReport(models.Model):
                     (sol.product_uom_qty - sol.qty_delivered) AS remaining_quantity,
                     (sol.product_uom_qty * pt.gross_weight) AS gross_weight,
                     (sol.product_uom_qty * pt.net_weight) AS net_weight,
-                    sol.bom_id AS bom_id,
+                    # sol.bom_id AS bom_id,
                     sol.process_bom_id AS process_bom_id
                 FROM sale_order_line sol
                 JOIN sale_order so ON sol.order_id = so.id
