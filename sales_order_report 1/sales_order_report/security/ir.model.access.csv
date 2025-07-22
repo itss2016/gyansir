@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_order_report,sale.order.report,model_sale_order_report,,1,1,1,1
+access_create_mo_wizard,access.create.mo.wizard,model_create_mo_wizard,,1,1,1,0
+access_confirm_mo_overproduce,access.confirm.mo.overproduce,model_confirm_mo_overproduce,,1,1,1,1
+access_add_stone_wizard,access.add.stone.wizard,model_add_stone_wizard,,1,1,1,0

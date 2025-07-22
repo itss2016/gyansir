@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_sale_order_report_list" model="ir.ui.view">
+        <field name="name">sale.order.report.list</field>
+        <field name="model">sale.order.report</field>
+        <field name="arch" type="xml">
+            <list string="Sale Order Report" create="false" edit="false">
+                <field name="order_id"/>
+                <field name="customer_id"/>
+                <field name="date_order"/>
+                <field name="product_id"/>
+<!--                <field name="product_collection" optional="hide"/>-->
+<!--                <field name="metal_product" optional="hide"/>-->
+<!--                <field name="metal_colour" optional="hide"/>-->
+<!--                <field name="product_size" optional="hide"/>-->
+                <field name="product_uom_qty"/>
+                <field name="qty_delivered"/>
+                <field name="remaining_quantity"/>
+                <field name="gross_weight" optional="hide"/>
+                <field name="net_weight" optional="hide"/>
+<!--                <field name="fineness" optional="hide"/>-->
+<!--                <field name="fine_weight" optional="hide"/>-->
+<!--                <field name="remark_ids" optional="hide"/>-->
+                <field name="bom_id" optional="hide"/>
+                <field name="process_bom_id" optional="hide"/>
+<!--                <field name="metal_market_rate" optional="hide"/>-->
+<!--                <field name="computed_bom_cost" optional="hide"/>-->
+                <field name="price_unit" optional="hide"/>
+                <field name="price_subtotal" optional="hide"/>
+                <field name="mo_qty_manufactured"/>
+                <field name="mo_remaining_qty"/>
+
+
+            </list>
+        </field>
+    </record>
+</odoo>

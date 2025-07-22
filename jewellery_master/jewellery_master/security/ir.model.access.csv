@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
+access_colour_master,access_colour_master,model_colour_master,,1,1,1,1
+access_metal_master,access_metal_master,model_metal_master,,1,1,1,1
+access_metal_fineness,access_metal_fineness,model_metal_fineness,,1,1,1,1
+access_collection_master,access_collection_master,model_collection_master,,1,1,1,1
+access_size_master,access_size_master,model_size_master,,1,1,1,1
+access_order_type,access_order_type,model_order_type,,1,1,1,1

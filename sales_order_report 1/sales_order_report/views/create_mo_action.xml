@@ -1,0 +1,20 @@
+<odoo>
+    <record id="action_open_create_mo_wizard" model="ir.actions.server">
+        <field name="name">Create Manufacturing Order</field>
+        <field name="model_id" ref="model_sale_order_report"/>
+        <field name="binding_model_id" ref="model_sale_order_report"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+                'type': 'ir.actions.act_window',
+                'res_model': 'create.mo.wizard',
+                'view_mode': 'form',
+                'target': 'new',
+                'context': {
+                    'active_id': records[0].id,
+                }
+            }
+        </field>
+        <field name="binding_type">action</field>
+    </record>
+</odoo>

@@ -1,0 +1,65 @@
+<odoo>
+    <!-- Create MO Wizard Form View -->
+    <record id="view_create_mo_wizard_form" model="ir.ui.view">
+        <field name="name">create.mo.wizard.form</field>
+        <field name="model">create.mo.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Manufacturing Order">
+                <group>
+<!--                    <field name="sale_order_report_id"/>-->
+                    <field name="product_id"/>
+                    <field name="bom_id"/>
+                    <field name="mo_quantity"/>
+                </group>
+                <footer>
+                    <button name="create_mo" type="object" string="Create MO" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Confirmation Wizard View -->
+    <record id="view_confirm_mo_overproduce_form" model="ir.ui.view">
+        <field name="name">confirm.mo.overproduce.form</field>
+        <field name="model">confirm.mo.overproduce</field>
+        <field name="arch" type="xml">
+            <form string="Confirm Overproduction">
+                <group>
+                    <field name="warning_message" readonly="1" nolabel="1"/>
+                </group>
+                <footer>
+                    <button name="confirm_overproduce" type="object" string="Yes, Proceed" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+     <!-- Add Stone Wizard View -->
+    <record id="view_add_stone_wizard_form" model="ir.ui.view">
+        <field name="name">add.stone.wizard.form</field>
+        <field name="model">add.stone.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Add Stone Components">
+                <group>
+                    <field name="bom_id" readonly="1"/>
+                    <field name="sale_order_report_id" readonly="1"/>
+                    <field name="mo_quantity" readonly="1"/>
+                </group>
+                <footer>
+                    <button string="Add Stone" type="object" name="add_stones" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Wizard Action (Optional if triggered from button only) -->
+<!--    <record id="action_create_mo_wizard" model="ir.actions.act_window">-->
+<!--        <field name="name">Create Manufacturing Order</field>-->
+<!--        <field name="res_model">create.mo.wizard</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
+</odoo>

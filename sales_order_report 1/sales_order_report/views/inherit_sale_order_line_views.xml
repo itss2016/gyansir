@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_order_form_inherit_weight_bom" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.weight.bom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page/field[@name='order_line']/list/field[@name='price_unit']" position="before">
+<!--                <field name="product_image" widget="image" class="oe_avatar"/>-->
+                <field name="bom_id" on_change="1"/>
+                <field name="process_bom_id"/>
+                <field name="gross_weight" readonly="1"/>
+                <field name="net_weight" readonly="1"/>
+                <field name="fineness"/>
+<!--                <field name="fine_weight"/>-->
+                <field name="wastage_percent"/>
+                <field name="fine_weight"/>
+                <field name="cost"/>
+
+            </xpath>
+
+            <xpath expr="//notebook/page/field[@name='order_line']/list/field[@name='product_template_id']" position="after">
+                <field name="product_image" widget="image" class="oe_avatar"/>
+            </xpath>
+
+            <xpath expr="//notebook/page/field[@name='order_line']/list/field[@name='bom_id']" position="after">
+    <button name="%(mrp.action_report_mrp_bom)d"
+        type="action"
+        string="BoM Overview"
+        icon="fa-bars"
+        context="{'active_id': bom_id.id}"
+        invisible="bom_id == False"/>
+
+</xpath>
+
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,19 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_sale_order_report" model="ir.actions.act_window">
+        <field name="name">Sales Order Report</field>
+        <field name="res_model">sale.order.report</field>
+        <field name="view_mode">list</field>  <!-- ✅ Fixed closing tag -->
+        <field name="view_id" ref="view_sale_order_report_list"/>
+<!--        <field name="search_view_id" ref="view_sale_order_report_search"/>-->
+
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_sale_order_report"
+              name="Open Order Report"
+              parent="sale.menu_sale_report"
+              action="action_sale_order_report"/>
+</odoo>
+
+

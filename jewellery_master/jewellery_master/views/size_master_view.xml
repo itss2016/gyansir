@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List View (Odoo 18 replaces <list> with <list>) -->
+    <record id="view_size_master_list" model="ir.ui.view">
+        <field name="name">size.master.list</field>
+        <field name="model">size.master</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="size"/>
+
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_size_master_form" model="ir.ui.view">
+        <field name="name">size.master.form</field>
+        <field name="model">size.master</field>
+        <field name="arch" type="xml">
+            <form string="Size Master">
+                <sheet>
+                    <group>
+                        <field name="size"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+     <!-- ✅ Define the Action -->
+    <record id="action_size_master" model="ir.actions.act_window">
+        <field name="name">Size Master</field>
+        <field name="res_model">size.master</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_size_master"
+              name="Size Master"
+              parent="stock.menu_stock_config_settings"
+              action="action_size_master"
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,21 @@
+{
+    'name': "Jewellery Master",
+    'version': '1.0',
+    'author': "Gaurav Goswami",
+    'category': 'Custom',
+    'summary': "Jewellery Master (Sales line Fields and some master",
+    'depends': ['base','product','sale'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/colour_master_view.xml',
+        'views/metal_master_view.xml',
+        'views/product_template_view.xml',
+        'views/sale_order_line_view.xml',
+        'views/collection_master_view.xml',
+        'views/size_master_view.xml',
+        'views/order_type_views.xml',
+        'views/sale_order_view.xml',
+    ],
+    'installable': True,
+    'application': True,
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="view_customer_product_code_list" model="ir.ui.view">
+        <field name="name">customer.product.code.list</field>
+        <field name="model">customer.product.code</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="customer_id"/>
+                <field name="product_id"/>
+                <field name="customer_code"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_customer_product_code_form" model="ir.ui.view">
+        <field name="name">customer.product.code.form</field>
+        <field name="model">customer.product.code</field>
+        <field name="arch" type="xml">
+            <form string="Customer Product Code">
+                <sheet>
+                    <group>
+                        <field name="customer_id" readonly="context.get('default_customer_id')"/>
+                        <field name="product_id" readonly="context.get('default_product_id')"/>
+                        <field name="customer_code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Product Smart Button -->
+    <record id="view_product_customer_code_smart_button" model="ir.ui.view">
+        <field name="name">product.product.customer.code.smart.button</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='open_pricelist_rules']" position="after">
+                <button name="action_view_customer_product_codes"
+                        type="object"
+                        string="Customer Codes"
+                        class="oe_stat_button"
+                        icon="fa-tags">
+                    <field name="customer_code_count" widget="statinfo" string="Customer Codes"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Customer Smart Button -->
+    <record id="view_partner_customer_code_smart_button" model="ir.ui.view">
+        <field name="name">res.partner.customer.code.smart.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_customer_product_codes"
+                        type="object"
+                        string="Product Codes"
+                        class="oe_stat_button"
+                        icon="fa-tags">
+                    <field name="customer_code_count" widget="statinfo" string="Product Codes"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_only_form_view_inherit_customer_code" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.customer.code</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='open_pricelist_rules']" position="after">
+                <button class="oe_stat_button" name="action_view_customer_product_codes" icon="fa-barcode"
+                        type="object">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value o_row">
+                            <field name="customer_code_count"/>
+                        </span>
+                        <span class="o_stat_text">Customer Codes</span>
+                    </div>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
